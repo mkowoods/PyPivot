@@ -10,15 +10,6 @@
 #-------------------------------------------------------------------------------
 
 
-#Coding Methodology
-#Define functions as Methods in the Function class
-#functions should take as inputs a list of values and perform the necessary calculation as defined by the function
-#in the reduce step
-#should only have two types of Columns, Aggregation Columns and Row Columns
-#use a dictionary to map what function is applied to what column
-
-
-
 import sys
 import csv
 
@@ -195,19 +186,4 @@ def main():
 
 
 if __name__ == "__main__":
-    pass
-    #main()
-    B = Mapper('Book2.csv')
-    B.key_col = [1, 4]
-    B.concatenate_col = [2, 3, 5 ,6, 7, 8, 9]
-    B.aggregate_col = [10, 11]
-    B.load_csv()
-    B.process_csv()
-
-    C = Reducer(B.doc_dict)
-    C.key_col = B.key_col
-    C.concatenate_col = B.concatenate_col
-    C.aggregate_col = B.aggregate_col
-    C.headers = B.headers
-    C.recurs_build()
-    C.write_csv('test_output.csv')
+    main()
